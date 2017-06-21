@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Teste</title>
+  </head>
+  <body>
+<style>
+img {
+  margin: 10px
+}
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+var folder = "img/";
+
+$.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(svg)$/) ) {
+                $("body").append( "<img width='50' src='" + val +"'>" );
+            }
+        });
+    }
+});
+</script>
+  </body>
+</html>
