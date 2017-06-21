@@ -22,7 +22,7 @@ $.ajax({
     success: function (data) {
         $(data).find("a").attr("href", function (i, icon) {
             if( icon.match(/\.(svg)$/) ) {
-                $("body").append( "<img width='50' src='" + folder + icon +"'>" );
+                $("body").append( "<img width='50' src='" + icon +"'>" );
             }
         });
     }
